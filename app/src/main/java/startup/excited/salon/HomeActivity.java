@@ -2,6 +2,7 @@ package startup.excited.salon;
 
 
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -12,20 +13,22 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
+import android.support.v4.widget.DrawerLayout;;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
@@ -35,6 +38,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import android.widget.ScrollView;
 import android.widget.Scroller;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,8 +47,8 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 
-public class HomeActivity extends AppCompatActivity {
-    private ImageView imageViewDot;
+public class HomeActivity extends Activity {
+    private ImageView imageViewDot,homeActionSearch;
     private ViewPager viewPager;
     private ImagePagerAdapter adapter;
     CollapsingToolbarLayout collapsingToolbar;
@@ -71,12 +75,12 @@ public class HomeActivity extends AppCompatActivity {
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_home);
-       // ActionBar actionBar = getSupportActionBar();
+       // ActionBar actionBar = getActionBar();
        // actionBar.hide();
 
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getActionBar().setDisplayHomeAsUpEnabled(true);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-        ActionBar ab = getSupportActionBar();
+        ActionBar ab = getActionBar();
         ab.setDisplayShowCustomEnabled(true);
         ab.setDisplayShowHomeEnabled(false);
         ab.setDisplayHomeAsUpEnabled(false);
@@ -85,6 +89,7 @@ public class HomeActivity extends AppCompatActivity {
        // View customView = getLayoutInflater().inflate(R.layout.home_custom_action_bar, null);
         ab.setCustomView(R.layout.home_custom_action_bar);
        createCutomActionBarTitle();
+        ab.setElevation(0f);
         Typeface tf = Typeface.createFromAsset(getAssets(),"font/gothic_bold.ttf");
         ((TextView)findViewById(R.id.beauty_tips)).setTypeface(tf);
         ((TextView)findViewById(R.id.top_brands)).setTypeface(tf);
@@ -111,6 +116,24 @@ public class HomeActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.quote1)).setTypeface(ralewayIt);
         ((TextView)findViewById(R.id.quote2)).setTypeface(ralewayIt);
 
+        final ScrollView homeScrollView = (ScrollView)findViewById(R.id.homeScrollView);
+        homeScrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+
+            @Override
+            public void onScrollChanged() {
+                int scrollY = homeScrollView.getScrollY(); //for verticalScrollView
+                //scrollY  = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, scrollY, getResources().getDisplayMetrics());
+                if(scrollY > 100){
+                    homeActionSearch.setVisibility(View.VISIBLE);
+                    //homeActionSearch.animate().alpha(1f).setDuration(100).setInterpolator(new AccelerateDecelerateInterpolator());
+                }else {
+                    homeActionSearch.setVisibility(View.INVISIBLE);
+                    //homeActionSearch.animate().alpha(0f).setDuration(100).setInterpolator(new AccelerateDecelerateInterpolator());
+                }
+                //DO SOMETHING WITH THE SCROLL COORDINATES
+
+            }
+        });
 
 
     LinearLayout manImage = (LinearLayout) findViewById(R.id.man_image);
@@ -204,8 +227,8 @@ public class HomeActivity extends AppCompatActivity {
         // Set the list's click listener
         // mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
         setupDrawer();
 
     }
@@ -272,7 +295,7 @@ public class HomeActivity extends AppCompatActivity {
            // @SuppressLint("NewApi")
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                getSupportActionBar().setTitle("Navigation!");
+                getActionBar().setTitle("Navigation!");
                 invalidateOptionsMenu();
             }
 
@@ -281,7 +304,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onDrawerClosed(View view) {
 
                 super.onDrawerClosed(view);
-                getSupportActionBar().setTitle("My Appointments");
+                getActionBar().setTitle("My Appointments");
                 invalidateOptionsMenu();
             }
         };
@@ -388,17 +411,19 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void createCutomActionBarTitle(){
-        this.getSupportActionBar().setDisplayShowCustomEnabled(true);
-        this.getSupportActionBar().setDisplayShowTitleEnabled(false);
+        this.getActionBar().setDisplayShowCustomEnabled(true);
+        this.getActionBar().setDisplayShowTitleEnabled(false);
 
         LayoutInflater inflator = LayoutInflater.from(this);
         View v = inflator.inflate(R.layout.home_custom_action_bar, null);
-
+        homeActionSearch = (ImageView) v.findViewById(R.id.home_action_search);
+        homeActionSearch.setVisibility(View.INVISIBLE);
+        //homeActionSearch.setAlpha(0f);
         Typeface tf = Typeface.createFromAsset(getAssets(),"font/Raleway-Medium.ttf");
         ((TextView)v.findViewById(R.id.actionbar_panache)).setTypeface(tf);
 
         //assign the view to the actionbar
-        this.getSupportActionBar().setCustomView(v);
+        this.getActionBar().setCustomView(v);
     }
 
     private class FixedSpeedScroller extends Scroller {
