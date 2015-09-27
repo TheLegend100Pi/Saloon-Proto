@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/lblListItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textColor="#000"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginLeft="20dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_weight="0.5"
+        android:gravity="left"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Rs"
+        android:textColor="#9B989C"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:id="@+id/rupee"
+        android:layout_weight="1"
+        android:gravity="right" />
+
+    <TextView
+        android:id="@+id/cost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textColor="#9B989C"
+        android:layout_toRightOf="@id/rupee"
+        android:layout_weight="1"
+        android:gravity="left" />
+
+    <ImageView
+        android:id="@+id/tick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cost"
+        android:src="@drawable/check"
+        android:layout_weight="1"
+        android:layout_marginRight="10dp"
+        android:visibility="invisible"/>
+
+
+</LinearLayout>

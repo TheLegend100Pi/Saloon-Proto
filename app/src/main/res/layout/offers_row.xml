@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:padding="5dp" >
+
+
+        <!-- the icon view -->
+        <ImageView android:id="@+id/offer_image"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            />
+
+        <!-- the container view for the title and description -->
+
+
+            <!-- the title view -->
+            <TextView android:id="@+id/offer_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/offer_image"
+                android:textSize="20sp"
+                android:textAlignment="center" />
+
+            <!-- the description view -->
+            <TextView android:id="@+id/offerDescription"
+                android:layout_below="@id/offer_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textAlignment="center" />
+            <TextView android:id="@+id/offerValidity"
+                android:layout_below="@id/offerDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textAlignment="center" />
+
+        </RelativeLayout>
+
+

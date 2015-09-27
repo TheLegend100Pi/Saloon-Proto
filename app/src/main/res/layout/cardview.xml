@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="270dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:clickable="true"
+        card_view:cardCornerRadius="4dp"
+        android:elevation="2dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardBackgroundColor="#ffffff"
+        >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            >
+            <RelativeLayout
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="100dp"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                >
+                <TextView
+                    android:id="@+id/storename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:paddingLeft="10dp"
+                    android:layout_alignParentTop="true"
+                    android:textColor="#0a010e"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+
+
+                    />
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/services"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#9B989C"
+
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="10dp"
+                    >
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="75dp"
+                        android:src="@drawable/salon"
+                        android:id="@+id/first_img"
+                        android:scaleType="fitXY"
+                        />
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="75dp"
+                        android:src="@drawable/salon"
+                        android:scaleType="fitXY"
+                        android:layout_toRightOf="@id/first_img"
+                        android:paddingLeft="10dp"
+                        android:id="@+id/second_img"/>
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="75dp"
+                        android:src="@drawable/salon"
+                        android:id="@+id/fourth_image"
+                        android:scaleType="fitXY"
+                        android:paddingLeft="10dp"
+                        android:layout_toRightOf="@id/second_img" />
+
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="75dp"
+                        android:scaleType="fitXY"
+                        android:paddingLeft="10dp"
+                        android:layout_toRightOf="@id/second_img">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/plus"
+                            android:scaleType="center"
+                            android:background="#99000000" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Facilities"
+                        android:layout_marginRight="80dp"
+                        android:textColor="#9B989C"
+                        android:id="@+id/facilties"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fac1"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/facilties"
+                        android:src="@drawable/ic_wifi_black_18dp"
+                        android:layout_marginRight="4dp"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fac2"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/fac1"
+                        android:src="@drawable/ic_local_parking_black_18dp"
+                        android:layout_marginRight="4dp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fac3"
+                        android:layout_toRightOf="@id/fac2"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/motorbike"
+                        android:layout_marginRight="4dp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fac4"
+                        android:layout_toRightOf="@id/fac3"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_insert_emoticon_black_18dp"
+                        android:layout_marginRight="4dp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ac"
+                        android:layout_toRightOf="@id/fac4"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/fan"
+                        android:layout_marginRight="4dp"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fac5"
+                        android:layout_toRightOf="@id/ac"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_credit_card_black_18dp"
+                        android:layout_marginRight="4dp"/>
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
+                    android:padding="5dp">
+                    <View android:id="@+id/separator"
+                        android:background="#e0e0e0"
+                        android:layout_width = "fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_centerVertical ="true"
+                        android:layout_alignParentTop="true"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <LinearLayout
+                                android:id="@+id/image"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+
+                                android:layout_centerVertical="true"
+                                android:paddingLeft="2dp"
+                                android:paddingRight="5dp"
+                                android:paddingBottom="4dp"
+                                android:paddingTop="4dp">
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/star"
+
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="3dp"
+                                    android:text="150"
+                                    android:id="@+id/rating"
+                                    android:textColor="#000"/>
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <LinearLayout
+                                android:id="@+id/map_mark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_centerVertical="true"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="8dp"
+                                android:paddingTop="8dp">
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/mapmarker"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2.5km"
+                                    android:layout_marginLeft="3dp"
+                                    android:id="@+id/curr_loc"
+                                    android:textColor="#000"/>
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bookbutton"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="2dp"
+                                android:paddingTop="2dp"
+
+                                android:layout_marginTop="1dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/booking"
+                                    android:text="BOOK"
+                                    android:layout_centerVertical="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:textColor="#FFF"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    />
+
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                </LinearLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,301 @@
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:paddingTop="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ADDRESS"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:id="@+id/addressCaption"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/detAddress"
+                android:layout_marginTop="20dp"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/map"
+                android:scaleType="fitXY"
+                android:layout_marginTop="20dp"/>
+            <View android:id="@+id/separator"
+                android:background="#e0e0e0"
+                android:layout_width = "fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="20dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PHOTOS"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:id="@+id/photosCaption"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="20dp"
+
+                >
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/salon"
+                    android:id="@+id/first_img"
+                    android:scaleType="fitXY"
+                    />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/salon"
+                    android:scaleType="fitXY"
+                    android:layout_toRightOf="@id/first_img"
+                    android:paddingLeft="10dp"
+                    android:id="@+id/second_img"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/salon"
+                    android:id="@+id/thirdimg"
+                    android:scaleType="fitXY"
+                    android:paddingLeft="10dp"
+                    android:layout_toRightOf="@id/second_img"
+                    />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/salon"
+                    android:id="@+id/fifthimg"
+                    android:scaleType="fitXY"
+                    android:paddingLeft="10dp"
+                    android:layout_toRightOf="@id/thirdimg"
+                    />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/salon"
+                    android:id="@+id/sixthimg"
+                    android:scaleType="fitXY"
+                    android:paddingLeft="10dp"
+                    android:layout_toRightOf="@id/fifthimg"
+                    />
+
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="75dp"
+                    android:scaleType="fitXY"
+                    android:paddingLeft="10dp"
+                    android:layout_toRightOf="@id/fifthimg">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/plus"
+                        android:scaleType="center"
+                        android:background="#99000000" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <View android:id="@+id/separator2"
+                android:background="#e0e0e0"
+                android:layout_width = "fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="20dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OPEN FROM"
+                    android:id="@+id/openFromCap"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="200dp"
+
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monday - Saturday"
+                        android:id="@+id/days"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/time"
+                        android:text="10 a.m. - 6 p.m."/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View android:id="@+id/separator3"
+                android:background="#e0e0e0"
+                android:layout_width = "fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="30dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FACILITIES"
+                android:id="@+id/facCap"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/ic_wifi_black_18dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wifi"
+                        android:id="@+id/fac1"
+
+                        android:layout_marginLeft="20dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/ic_local_parking_black_18dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Parking"
+                        android:id="@+id/fac2"
+
+                        android:layout_marginLeft="20dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/ic_insert_emoticon_black_18dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kids Facalities"
+                        android:id="@+id/fac3"
+
+                        android:layout_marginLeft="20dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/fan"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fac4"
+
+                        android:text="Air Conditioned"
+                        android:layout_marginLeft="20dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/ic_credit_card_black_18dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Card Payment"
+                        android:id="@+id/fac5"
+
+                        android:layout_marginLeft="20dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
